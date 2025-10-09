@@ -3,7 +3,7 @@ import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/c
 
 export const metadata = {
   title: 'Acredia',
-  description: 'Sitio creado con Next.js y Mantine',
+  description: 'Acreditación, certificación e innovación empresarial',
 };
 
 export default function RootLayout({
@@ -15,6 +15,7 @@ export default function RootLayout({
     <html lang="es" {...mantineHtmlProps}>
       <head>
         <ColorSchemeScript />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <MantineProvider>

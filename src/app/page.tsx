@@ -1,47 +1,60 @@
 'use client';
 
-import { Carousel } from '@mantine/carousel';
-import '@mantine/core/styles.css';
-import '@mantine/carousel/styles.css';
-import { Title, Paper } from '@mantine/core';
+import { Box, Container, Stack, Title, Text, Image, Group, Button } from '@mantine/core';
+import Link from 'next/link';
 
 export default function HomePage() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <Title order={2} mb="md">
-        Bienvenido a Acredia
-      </Title>
+    <Box
+      component="main"
+      // Fondo a pantalla completa
+      style={{
+        minHeight: '100dvh',
+        display: 'grid',
+        placeItems: 'center',
+        background: 'linear-gradient(180deg, #1f2a36 0%, #141a20 100%)',
+        padding: 24,
+      }}
+    >
+      <Container size={560} p="lg">
+        <Stack align="center" gap="sm">
+<Box
+  style={{
+    filter: 'drop-shadow(0 0 10px rgba(255, 255, 255, 0.5))',
+  }}
+>
+  <Image
+    src="/img/logo.png"
+    alt="Logo Acredia"
+    fit="contain"
+    mah={100}
+    maw={100}
+  />
+</Box>
+          {/* Imagen principal (cambia la ruta si usas otro archivo) */}
+          <Image
+            src="/img/under-const.svg"
+            alt="Sitio en construcción"
+            fit="contain"
+            mah={260}       // altura máx. para mantener proporción
+          />
 
-      <Carousel
-        withIndicators
-        height={300}
-        slideGap="md"
-        emblaOptions={{ 
-          loop: true, 
-          align: 'center'
-        }}
-      >
-        <Carousel.Slide>
-          <Paper shadow="md" radius="md" p="xl" style={{ backgroundColor: '#f0f0f0', height: '100%' }}>
-            <Title order={3}>Diagnóstico y Evaluación de Cumplimiento</Title>
-            <p>Evaluación inicial de la situación de la empresa frente a los requisitos exigidos por entidades como SICEP, ISO 9001, ISO 14001, ISO 45001, entre otros.</p>
-          </Paper>
-        </Carousel.Slide>
+          {/* Título y texto */}
+          <Title order={2} c="gray.0" ta="center" mt="sm">
+            Estamos trabajando en esto
+          </Title>
+          <Text c="gray.4" ta="center">
+            Muy pronto tendrás aquí mi nuevo sitio web. {/*Mientras tanto, puedes visitar mi presentación o escribirme.*/}
+          </Text>
 
-        <Carousel.Slide>
-          <Paper shadow="md" radius="md" p="xl" style={{ backgroundColor: '#e0e0e0', height: '100%' }}>
-            <Title order={3}>Implementación de Sistemas de Gestión</Title>
-            <p>Asesoría para diseñar, documentar e implementar sistemas de gestión (calidad, medio ambiente, seguridad, etc.) conforme a normativas ISO u otros estándares exigidos por plataformas como SICEP.</p>
-          </Paper>
-        </Carousel.Slide>
-
-        <Carousel.Slide>
-          <Paper shadow="md" radius="md" p="xl" style={{ backgroundColor: '#d0d0d0', height: '100%' }}>
-            <Title order={3}>Gestión de Acreditaciones y Postulación en Plataformas</Title>
-            <p>Acompañamiento en la postulación, carga de documentación y mantenimiento de la acreditación en plataformas como SICEP, Achilles, RePro, entre otras.</p>
-          </Paper>
-        </Carousel.Slide>
-      </Carousel>
-    </div>
+          {/* CTA opcionales */}
+          {/*<Group mt="md">
+            <Button component={Link} href="/team/kdiaztapia" variant="light">
+              Contacto
+            </Button>
+          </Group>*/}
+        </Stack>
+      </Container>
+    </Box>
   );
 }
